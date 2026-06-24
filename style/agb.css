@@ -1,0 +1,252 @@
+:root {
+    --legal-sticky-top: 24px;
+}
+
+.agb-page {
+    flex: 1;
+}
+
+.skip-link {
+    position: absolute;
+    left: 20px;
+    top: -60px;
+    z-index: 100;
+    background: rgba(15, 23, 42, 0.96);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    border-radius: 12px;
+}
+
+.skip-link:focus {
+    top: 18px;
+}
+
+.legal-hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px 24px;
+}
+
+.legal-hero-full {
+    display: block;
+}
+
+.hero-copy-full {
+    max-width: 100%;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(34, 211, 238, 0.1);
+    border: 1px solid rgba(34, 211, 238, 0.18);
+    color: #b7f3ff;
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero-copy h1 {
+    font-size: clamp(2.8rem, 6vw, 5.2rem);
+    line-height: 1.02;
+    margin-bottom: 22px;
+    max-width: 13ch;
+}
+
+.hero-copy h1 span {
+    color: var(--accent2);
+}
+
+.hero-copy p {
+    max-width: 74ch;
+    color: var(--muted);
+    font-size: 1.04rem;
+}
+
+.toc-card,
+.legal-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.78);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+}
+
+.toc-card::after,
+.legal-card::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px dashed rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+.card-tag,
+.toc-label {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.toc-label {
+    color: #b7f3ff;
+    background: rgba(34, 211, 238, 0.1);
+    border: 1px solid rgba(34, 211, 238, 0.18);
+}
+
+.card-tag {
+    color: #c7dcff;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.18);
+}
+
+.legal-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 90px;
+    display: grid;
+    grid-template-columns: 290px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.toc-wrap {
+    position: sticky;
+    top: var(--legal-sticky-top);
+    align-self: start;
+}
+
+.toc-card {
+    border-radius: 22px;
+    padding: 24px;
+    max-height: calc(100vh - (var(--legal-sticky-top) * 2));
+    overflow-y: auto;
+}
+
+.toc-nav {
+    display: grid;
+    gap: 10px;
+}
+
+.toc-nav a {
+    display: block;
+    color: var(--muted);
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 0.92rem;
+    transition:
+            transform 0.2s ease,
+            border-color 0.2s ease,
+            color 0.2s ease,
+            background 0.2s ease;
+}
+
+.toc-nav a:hover,
+.toc-nav a:focus-visible {
+    color: var(--text);
+    border-color: rgba(34, 211, 238, 0.26);
+    background: rgba(34, 211, 238, 0.08);
+    transform: translateX(3px);
+}
+
+.legal-content {
+    display: grid;
+    gap: 18px;
+    min-width: 0;
+}
+
+.legal-card {
+    border-radius: 24px;
+    padding: 28px 28px 26px;
+    scroll-margin-top: var(--legal-sticky-top);
+    content-visibility: auto;
+}
+
+.legal-card h2 {
+    font-size: 1.32rem;
+    margin-bottom: 14px;
+    line-height: 1.15;
+}
+
+.legal-card p {
+    color: var(--muted);
+    margin-bottom: 12px;
+    max-width: 72ch;
+}
+
+.legal-card p:last-child {
+    margin-bottom: 0;
+}
+
+.highlighted {
+    border-color: rgba(34, 211, 238, 0.24);
+    background:
+            radial-gradient(circle at top right, rgba(34, 211, 238, 0.1), transparent 34%),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+}
+
+.page-shell,
+.agb-page,
+.legal-layout {
+    overflow: visible;
+}
+
+body {
+    overflow-x: clip;
+}
+
+@media (max-width: 1020px) {
+    .legal-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .toc-wrap {
+        position: relative;
+        top: auto;
+    }
+
+    .toc-card {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .hero-copy h1 {
+        max-width: 11ch;
+    }
+}
+
+@media (max-width: 720px) {
+    .legal-hero {
+        padding: 70px 20px 20px;
+    }
+
+    .hero-copy h1 {
+        font-size: 2.5rem;
+        max-width: 10ch;
+        line-height: 1.05;
+    }
+
+    .toc-card,
+    .legal-card {
+        border-radius: 20px;
+    }
+
+    .legal-card {
+        padding: 24px 20px 22px;
+    }
+
+    .toc-nav a {
+        font-size: 0.88rem;
+    }
+}

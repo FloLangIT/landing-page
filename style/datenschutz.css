@@ -1,0 +1,62 @@
+/* ── Hero ── */
+.hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 20px 40px;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.7rem);
+    font-weight: 700;
+    line-height: 1.12;
+    margin-bottom: 16px;
+}
+
+.hero h1 span { color: var(--accent2); }
+
+.hero p {
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+/* ── Content Card ── */
+.legal-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+}
+
+.card {
+    padding: 48px 32px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 16px 35px rgba(0,0,0,0.18);
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    color: var(--accent2);
+}
+
+p  { margin-bottom: 10px; color: var(--text); }
+
+ul { margin-left: 20px; margin-bottom: 12px; list-style-position: outside; }
+ul li { margin-bottom: 6px; color: var(--text); }
+
+strong { color: var(--text); }
+
+.section {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+    .card { padding: 32px 22px; border-radius: 20px; }
+}

@@ -110,27 +110,66 @@ main { flex: 1; }
     color: var(--accent2);
 }
 
-/* ── Header Contact ── */
-.header-contact {
+.header-contact-box {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-    gap: 6px;
-    font-size: 0.95rem;
-    color: var(--muted);
+    align-items: stretch;
+    gap: 18px;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
     flex-shrink: 0;
 }
 
-.header-contact span {
-    font-size: 0.8rem;
+.header-contact-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    min-width: 0;
+}
+
+.header-contact-col span {
+    font-size: 0.76rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    color: var(--accent2);
+    margin-bottom: 2px;
+}
+
+.header-contact-col a,
+.header-contact-col p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.45;
+    white-space: nowrap;
+}
+
+.header-contact-col p {
     color: var(--muted);
 }
 
-.header-contact a { color: var(--text); transition: color 0.2s ease; }
-.header-contact a:hover { color: var(--accent2); }
+.header-contact-col a {
+    transition: color 0.2s ease;
+}
+
+.header-contact-col a:hover {
+    color: var(--accent2);
+}
+
+.header-contact-divider {
+    width: 1px;
+    align-self: stretch;
+    background: linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.18),
+            rgba(255,255,255,0.04)
+    );
+}
 
 /* ── Site Footer ── */
 .site-footer {
